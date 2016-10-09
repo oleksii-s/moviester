@@ -1,7 +1,8 @@
 *.log
-node_modules
+
 typings/**/*
 !typings/.gitkeep
 dist/**/*.js
 dist/**/*.js.map
-bower_components
+
+node_modules
