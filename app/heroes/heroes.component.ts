@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs/Observable";
 
 import { Hero }		 from './hero';
 import { HeroService } from './hero.service';
@@ -10,7 +11,7 @@ import { HeroService } from './hero.service';
 })
 export class HeroesComponent implements OnInit {
 	title = 'Tour of Hero';
-	heroes = [];
+	heroes = <Observable<Hero[]>>new Observable();
 	selectedHero: Hero;
 
 	constructor(private heroService: HeroService) {}
@@ -20,7 +21,8 @@ export class HeroesComponent implements OnInit {
 	}
 
 	getHeroes(): void {
-    	this.heroes = this.heroService.getHeroes();
+    	this.heroes = this.heroService.heroes$;
+		this.heroService.getAll();
 	}
 
 	onSelect(hero: Hero): void {
