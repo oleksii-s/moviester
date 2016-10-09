@@ -1,0 +1,8 @@
+<section *ngIf="hero">
+    <h2>{{hero.name}} details!</h2>
+    <div  class="md-form">
+        <i class="fa fa-user fa-lg"></i>	
+    <input [(ngModel)]="hero.name" placeholder="Hero Name" type="text" id="hero-name" class="form-control" />
+        <label class="active" for="hero-name">Hero #{{hero.id}} name </label>
+    </div>
+</section>
