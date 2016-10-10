@@ -1,5 +1,10 @@
 <div class="row">
     <h1>{{ title }}</h1>
+    <nav>
+     <a routerLink="/dashboard">Dashboard</a>
+     <a routerLink="/heroes">Heroes</a>
+   </nav>
+   <router-outlet></router-outlet>
     <div class="col-md-6">
         <h2>My Heroes</h2>
         <ul class="heroes list-group	">
@@ -12,6 +17,6 @@
         </ul>
     </div>
     <div class="col-md-6">
-        <my-hero-details [hero]="selectedHero"></my-hero-details>
+        <hero-details [hero]="selectedHero"></hero-details>
     </div>
 </div>
